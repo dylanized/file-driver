@@ -1,10 +1,10 @@
 {
   "name": "peezy-file-helper",
-  "version": "0.0.1",
-  "description": "File manipulation toolkit from Peezy framework",
+  "version": "0.0.2",
+  "description": "Simple file manipulation toolkit",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "author": "dylanized",
   "license": "MIT",
@@ -16,5 +16,8 @@
     "jsonfile": "^2.2.3",
     "path": "^0.12.7",
     "recursive-readdir-sync": "^1.0.6"
+  },
+  "devDependencies": {
+    "peezy-test-helper": "^0.0.5"
   }
 }

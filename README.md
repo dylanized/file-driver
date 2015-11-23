@@ -1,2 +1,2 @@
 # peezy-file-helper
-File manipulation toolkit
+Simple file manipulation toolkit

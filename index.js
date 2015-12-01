@@ -103,7 +103,21 @@
 		}
 		
 	}
+
+	fileHelper.delFolder = function(filepath) {
+	
+		if (typeof filepath == "string") {
+			if (this.exists(filepath)) fs.rmdir(filepath);
+		} else if (typeof filepath == "object") {
+			for (var key in filepath) {
+				if (this.exists(filepath[key])) fs.rmdir(filepath[key]);	
+			}
+		}
 		
+	}
+	
+	fileHelper.rmdir = fileHelper.delFolder;
+			
 /* export(s) */
 	
 	fileHelper.export = function(filepath, content, fields) {

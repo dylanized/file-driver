@@ -66,6 +66,8 @@
 	
 	}	
 	
+	fileHelper.tree = fileHelper.getFilesRecursive;
+	
 /* get folders */
 
 	fileHelper.getFolders = function(folderpath) {

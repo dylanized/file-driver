@@ -103,6 +103,8 @@
 		}
 		
 	}
+	
+	fileHelper.rm = fileHelper.del;
 
 	fileHelper.delFolder = function(filepath) {
 	
@@ -128,8 +130,7 @@
 		
 		else this.save(filepath, content);
 	
-	}
-	
+	}	
 	
 	fileHelper.save = function(filepath, content) {
 	

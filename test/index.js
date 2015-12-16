@@ -1,6 +1,6 @@
 // setup
 	
-	var test = require("peezy-test-helper"),
+	var test = require("suite-tooth"),
 		exists = require("exists-file"),
 		_ = require("lodash"),
 		path = require("path");

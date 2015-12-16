@@ -42,7 +42,10 @@
 				desc: "Create folder",
 				assert: function() {
 					
+					test.assert(exists(basepath) === false);
+
 					file.mkdir(basepath);
+
 					test.assert(exists(basepath) === true);
 					
 				}
@@ -51,7 +54,10 @@
 				desc: "Create subfolder",
 				assert: function() {
 					
+					test.assert(exists(subpath1) === false);
+
 					file.mkdir(subpath1);
+
 					test.assert(exists(subpath1) === true);
 					
 				}
@@ -60,7 +66,11 @@
 				desc: "Create multiple folders",
 				assert: function() {
 					
+					test.assert(exists(subpath2) === false);
+					test.assert(exists(subpath3) === false);
+
 					file.mkdir([subpath2, subpath3]);
+
 					test.assert(exists(subpath2) === true);
 					test.assert(exists(subpath3) === true);
 					
@@ -75,7 +85,10 @@
 				desc: "Export .txt file",
 				assert: function() {
 				
+					test.assert(exists(filepath1) === false);
+
 					file.export(filepath1, content);
+
 					test.assert(exists(filepath1) === true);
 					
 				}
@@ -84,7 +97,10 @@
 				desc: "Export .json file",
 				assert: function() {
 					
+					test.assert(exists(filepath2) === false);
+
 					file.export(filepath2, foobar);
+
 					test.assert(exists(filepath2) === true);
 					
 				}
@@ -93,7 +109,10 @@
 				desc: "Export .csv file",
 				assert: function() {
 				
+					test.assert(exists(filepath3) === false);	
+
 					file.export(filepath3, foobar);
+
 					test.assert(exists(filepath3) === true);	
 					
 				}
@@ -204,8 +223,7 @@
 			{
 				desc: "Import .txt file",
 				assert: function() {
-				
-				
+								
 					var stuff = file.import(filepath1);
 					test.assert(stuff);  // TODO: make sure content matches
 					
@@ -220,7 +238,10 @@
 				desc: "Delete single file",
 				assert: function() {
 				
+					test.assert(exists(filepath1) === true);
+					
 					file.del(filepath1);					
+
 					test.assert(exists(filepath1) === false);
 					
 				}
@@ -229,7 +250,11 @@
 				desc: "Delete multiple files",
 				assert: function() {
 				
+					test.assert(exists(filepath2) === true);
+					test.assert(exists(filepath3) === true);
+
 					file.del([filepath2, filepath3]);
+
 					test.assert(exists(filepath2) === false);
 					test.assert(exists(filepath3) === false);
 					
@@ -239,7 +264,10 @@
 				desc: "Delete single folder",
 				assert: function() {
 				
+					test.assert(exists(subpath3) === true);
+					
 					file.delFolder(subpath3);
+					
 					test.assert(exists(subpath3) === false);
 					
 				}
@@ -247,8 +275,13 @@
 			{
 				desc: "Delete multiple folders",
 				assert: function() {
-				
+
+					test.assert(exists(subpath2) === true);
+					test.assert(exists(subpath1) === true);
+					test.assert(exists(basepath) === true);			
+						
 					file.delFolder([subpath2, subpath1, basepath]);					
+					
 					test.assert(exists(subpath2) === false);
 					test.assert(exists(subpath1) === false);
 					test.assert(exists(basepath) === false);

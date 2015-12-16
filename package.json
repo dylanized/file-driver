@@ -1,6 +1,6 @@
 {
-  "name": "peezy-file-helper",
-  "version": "0.0.3",
+  "name": "file-driver",
+  "version": "0.1.0",
   "description": "Simple file manipulation toolkit",
   "main": "index.js",
   "scripts": {
